@@ -34,6 +34,12 @@ EMAIL_HOST_PASSWORD = '005a9251784b44'
 EMAIL_PORT = '2525'
 EMAIL_USE_TLS = 'TLS'
 
+
+# EMAIL_HOST = 'socialnetworkalumni.kembangteratai.com'
+# EMAIL_HOST_USER = 'noreply@socialnetworkalumni.kembangteratai.com'
+# EMAIL_HOST_PASSWORD = 'arilie12081999'
+# EMAIL_PORT = '587'
+# EMAIL_USE_TLS='TLS'
 # Application definition
 
 INSTALLED_APPS = [
@@ -95,6 +101,19 @@ DATABASES = {
 }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'kembangt_portfolio',
+#         'USER': 'kembangt_arilie',
+#         'PASSWORD': 'arilie12081999',
+#         'HOST': 'localhost',
+#         'PORT': 3306,
+
+#     }
+# }
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -133,7 +152,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 
