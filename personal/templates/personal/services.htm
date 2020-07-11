@@ -1,0 +1,15 @@
+{% extends 'personal/index.htm' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    {% if button == 'Edit' %}
+    <button type="submit">Simpan Perubahan</button>
+    {% else %}
+    <button type="submit">Tambahkan</button>
+    {% endif %}
+
+</form>
+{% endblock content %}

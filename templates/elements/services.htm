@@ -1,0 +1,22 @@
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>{{services_desc.description}}</p>
+                </div>
+
+                <div class="row">
+                    {% for list in services_body %}
+                    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                        <div class="icon"><i class="{{list.icon}}"></i></div>
+                        <h4 class="title"><a href="">{{list.name}}</a></h4>
+                        <p class="description">{{list.description}}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->

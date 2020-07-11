@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Ari Susanto - Personal Portfolio</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    {% include 'snippets/header.htm' %}
+
+
+</head>
+
+<body>
+
+    {% include 'elements/navbar.htm' %}
+
+    {% include 'elements/imagetext.htm' %}
+
+    <main id="main">
+
+        {% include 'elements/about.htm' %}
+
+        {% include 'elements/skills.htm' %}
+
+        {% include 'elements/resume.htm' %}
+
+        {% include 'elements/portfolio.htm' %}
+
+        {% include 'elements/services.htm' %}
+
+        {% include 'elements/testimony.htm' %}
+
+        {% include 'elements/contact.htm' %}
+
+        <div id="popup_content_wrap" style='display:none'>
+            <div id="popup_content">
+                <center>
+
+                    <h3>Information</h3>
+                    <hr>
+                    <hr>
+                    <p>Im Looking For Internship Backend Engineer / Web Developer In Jakarta, Indonesia, Please Offers
+                        Me, thank you for your attention.</p>
+                    <input type="submit" name="submit" value="Continue" class="btn btn-primary"
+                        onClick="popup_content('hide')" />
+                </center>
+            </div>
+        </div>
+    </main><!-- End #main -->
+
+    {% include 'snippets/footer.htm' %}
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+{% extends 'personal/index.htm' %}
+
+{% block content %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+
+
+
+    {% if button == 'Edit' %}
+    <button type="submit">Simpan Perubahan</button>
+    {% else %}
+    <button type="submit">Tambahkan</button>
+    {% endif %}
+
+</form>
+<table class="table mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Descriptions</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in lists %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{list.name}}</td>
+            <td>{{list.icon}}%</td>
+            <td>{{list.description}}</td>
+            <td>
+                <a class='btn btn-warning' href="{% url 'personal:services_body_update' id=list.id %}">Update</a>
+                <a class='btn btn-danger' href="{% url 'personal:services_body_delete' id=list.id %}">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,65 @@
+  <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+              <div class="nav">
+                  <div class="sb-sidenav-menu-heading">Core</div>
+                  <a class="nav-link" href="index.html">
+                      <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                      Dashboard
+                  </a>
+
+                  <div class="sb-sidenav-menu-heading">Panel</div>
+                  <a class="nav-link" href="{% url 'personal:personal' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
+                      Personal Data
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:about' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
+                      About
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:skills' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-list-ol"></i></div>
+                      Skills
+                  </a>
+
+                  <div class="sb-sidenav-menu-heading">Personal Resume</div>
+                  <a class="nav-link" href="{% url 'personal:resume' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-list-ol"></i></div>
+                      Resume
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:resume_summary' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-list-ol"></i></div>
+                      Summary
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:resume_education' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-list-ol"></i></div>
+                      Education
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:resume_experience' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-list-ol"></i></div>
+                      Experience
+                  </a>
+                  <div class="sb-sidenav-menu-heading">Services Panel</div>
+                  <a class="nav-link" href="{% url 'personal:services' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
+                      Services
+                  </a>
+                  <a class="nav-link" href="{% url 'personal:services_body' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
+                      Services Body
+                  </a>
+                  <div class="sb-sidenav-menu-heading">Testimonial & Contact</div>
+                  <a class="nav-link" href="{% url 'personal:testimonials' %}">
+                      <div class="sb-nav-link-icon"><i class="fas fa-comment"></i></div>
+                      Testimonials
+                  </a>
+              </div>
+          </div>
+          <div class="sb-sidenav-footer">
+              <div class="small">Logged in as:</div>
+
+              {{user.username}}
+
+          </div>
+      </nav>
+  </div>

@@ -1,0 +1,44 @@
+{% extends 'personal/index.htm' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    {% if button == 'Edit' %}
+    <button type="submit">Simpan Perubahan</button>
+    {% else %}
+    <button type="submit">Tambahkan</button>
+    {% endif %}
+
+</form>
+<table class="table mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Periode</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in lists %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{list.title}}</td>
+            <td>{{list.period}}</td>
+            <td>{{list.alamat}}</td>
+            <td>{{list.description}}</td>
+
+            <td>
+                <a class='btn btn-warning' href="{% url 'personal:resume_education_update' id=list.id %}">Update</a>
+                <a class='btn btn-danger' href="{% url 'personal:resume_education_delete' id=list.id %}">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}<h1>hahah</h1>

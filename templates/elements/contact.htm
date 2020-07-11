@@ -1,0 +1,118 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Now that you know what I've done and what I could do for you, feel free to reach out and start a
+                conversation. I always enjoy speaking with passionate business owners about their needs.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+            <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                    <div class="address">
+                        <i class="icofont-google-map"></i>
+                        <h4>Location:</h4>
+                        <p>Tanjung Duren Utara, Grogol petamburan - Jakarta Barat</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="icofont-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>arisusantolie12@gmail.com</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="icofont-phone"></i>
+                        <h4>Call:</h4>
+                        <p>+62 822 7699 5372</p>
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.672523602721!2d106.77581022406504!3d-6.175164928468881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6584d4a9879%3A0xa5e7f60a5ec57cbc!2sTj.%20Duren%20Utara%2C%20Kec.%20Grogol%20petamburan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1594022626277!5m2!1sid!2sid"
+                        frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+
+
+                <form method="post" rule="form" class="php-email-form">
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            {{form.name.label}}
+                            {{form.name}}
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{form.email.label}}
+                            {{form.email}}
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{form.subject.label}}
+                        {{form.subject}}
+                    </div>
+                    <div class="form-group">
+                        {{form.message.label}}
+                        {{form.message}}
+
+                    </div>
+                    {% if statusmail == 'True' %}
+                    <div class="mb-3">
+                        <div>Your message has been sent. Thank you!</div>
+                    </div>
+                    {% elif statusmail == 'False' %}
+                    <div class="mb-3 text-danger">
+                        <div>Your Failed To Sended. Please Try Again!</div>
+                    </div>
+                    {% else %}
+                    {% endif %}
+
+
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% comment %} {% if statusmail == 'True' %}
+                    {% elif statusmail == 'False' %}
+                    <p>Your Failed To Sended. Please Try Again!</p>
+                    {% endif %} {% endcomment %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</section><!-- End Contact Section -->

@@ -1,0 +1,46 @@
+        <!-- ======= Skills Section ======= -->
+        <section id="skills" class="skills section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Skills</h2>
+                    <p>I'm a Person who love to learn more & something new, because the knowledge of technology like
+                        time, never Stop!</p>
+                </div>
+
+                <div class="row skills-content">
+
+                    <div class="col-lg-6" data-aos="fade-up">
+                        {% for skill  in skills1  %}
+                        <div class="progress">
+                            <span class="skill">{{skill.skill}} <i class="val">{{skill.ability}}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{skill.ability}}"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        {% for skill  in skills2  %}
+                        <div class="progress">
+                            <span class="skill">{{skill.skill}} <i class="val">{{skill.ability}}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{skill.ability}}"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Skills Section -->

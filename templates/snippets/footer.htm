@@ -1,0 +1,51 @@
+    {% load static %}
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Ari Susanto</span></strong>
+            </div>
+            <div class="credits ">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+                <small>Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></small>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %} "></script>
+
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/counterup/counterup.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/venobox/venobox.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/typed.js/typed.min.js' %} "></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %} "></script>
+    {% if messages %}
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+    {% endif %}
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+        function popup_content(hideOrshow) {
+            if (hideOrshow == 'hide') document.getElementById('popup_content_wrap').style.display = "none";
+            else document.getElementById('popup_content_wrap').removeAttribute('style');
+        }
+        window.onload = function () {
+            setTimeout(function () {
+                popup_content('show');
+            }, 100);
+        }
+    </script>

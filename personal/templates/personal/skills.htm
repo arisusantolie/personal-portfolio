@@ -1,0 +1,102 @@
+{% extends 'personal/index.htm' %}
+
+{% block content %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            {{form.skill.label}}
+
+            <input type="text" {% if form.skill.value %} value={{form.skill.value}} {% else %} {% endif %} name="skill"
+                class="form-control 
+            {% if form.skill.errors %}
+            is-invalid 
+            {% elif form.skill.value == None %}
+            {% else %}
+            is-valid
+            {% endif %}" placeholder="Nama skill" maxlength="50" required="" id="id_skill">
+
+            {% if form.skill.errors %}
+            <div class="invalid-feedback">
+
+
+                {% for error in form.skill.errors %}
+                {{ error|escape }}
+                {% endfor %}
+
+
+            </div>
+            {% else %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            {{form.ability.label}}
+            <input type="number" {% if form.ability.value %} value="{{form.ability.value}}" {% else %} {% endif %}
+                name="ability" class="form-control 
+            {% if form.ability.errors %}
+            is-invalid
+            {% elif form.skill.value == None %} 
+            {% else %}
+            is-valid
+            {% endif %}" placeholder="Persentasi Skill" required id="id_ability">
+
+            {% if form.ability.errors %}
+            <div class="invalid-feedback">
+
+
+                {% for error in form.ability.errors %}
+                {{ error|escape }}
+                {% endfor %}
+
+
+            </div>
+            {% else %}
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+    {% if button == 'Edit' %}
+    <button type="submit">Simpan Perubahan</button>
+    {% else %}
+    <button type="submit">Tambahkan</button>
+    {% endif %}
+
+</form>
+<table class="table mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Skill</th>
+            <th scope="col">Ability</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in lists %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{list.skill}}</td>
+            <td>{{list.ability}}%</td>
+            <td>
+                <a class='btn btn-warning' href="{% url 'personal:skillUPDATE' id=list.id %}">Update</a>
+                <a class='btn btn-danger' href="{% url 'personal:skillDELETE' id=list.id %}">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
